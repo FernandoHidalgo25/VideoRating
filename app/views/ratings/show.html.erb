@@ -1,0 +1,10 @@
+<h1> <%= info %> </h1>
+
+<p align=center> <%=@rating.user.name %>'s rating for <%=@rating.video.title %> </p>
+<h1 align=center> <%=@rating.title %> </h1>
+<%=@rating.body %> </br>
+<p> <i> <%=@rating.rating %> out of 100 </i> </p>
+
+
+<%= rating_edit_owner? %>
+<%= rating_delete_owner? %>

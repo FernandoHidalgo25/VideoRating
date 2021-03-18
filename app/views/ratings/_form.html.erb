@@ -1,0 +1,29 @@
+<%= render partial: "layouts/errors", locals: { object: @rating } %>
+
+</br>
+
+<%= form_for @rating do |f| %>
+  <%= f.label :title %> 
+  <%= f.text_field :title%><br>
+  <%= f.label :body %> 
+  <%= f.text_field :body%><br>
+  <%= f.label :rating %> 
+  <%= f.number_field :rating%><br>
+  <%= hidden_field_tag "rating[video_id]", new_or_update?%>
+  <% if new_video?%>
+    <%= f.fields_for :video, @rating.build_video do |g|%>
+      <%= g.hidden_field :id%><br>
+      <%= g.label :title %>
+      <%= g.text_field :title%><br>
+      <%= g.label :genre %>
+      <%= g.text_field :genre%><br>
+      <%= g.label :developer %>
+      <%= g.text_field :developer%><br>
+      <%= g.label :age, "Age Rating" %>
+      <%= g.text_field :age%><br>
+      <%= g.label :year_released, "Release Year" %> 
+      <%= g.number_field :year_released%><br>
+    <%end%>
+  <%end%>
+  <%= f.submit "Submit  Rating" %>
+<% end %>

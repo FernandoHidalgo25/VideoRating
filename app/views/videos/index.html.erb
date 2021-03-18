@@ -1,0 +1,8 @@
+<h1 align=center> <%= info %> </h1>
+
+<p align=center> <%=admin_perms_new_video%>  </p>
+
+</br>
+<% @videos.each do |video| %>
+<%= link_to "#{video.title} (#{video.year_released})", video_path(video)%> </br>
+<% end %>

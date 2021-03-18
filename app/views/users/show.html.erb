@@ -1,0 +1,9 @@
+<h1 align="center"> <%= info %> </h1>
+<p align="center">This is <%=@user.name%>'s page</p> 
+<p align="center">If you disagree with them, let them know here <%=@user.email %> <p> </br>
+
+<p align="center"><% @user.ratings.each do |rating| %>
+    <%= "#{rating.video.title}:" %> 
+    <%= link_to rating.title, user_rating_path(@user, rating)%>
+    <%=" (#{rating.rating}/100)" %></br>
+<%end%></p>

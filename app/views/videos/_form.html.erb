@@ -1,0 +1,17 @@
+
+<%= render partial: "layouts/errors", locals: { object: @videos } %>
+</br>
+
+<%= form_for @videos do |f| %>
+  <%= f.label :title %> 
+  <%= f.text_field :title%><br>
+  <%= f.label :genre %>
+  <%= f.text_field :genre%><br>
+  <%= f.label :developer %>
+  <%= f.text_field :developer%><br>
+  <%= f.label :age, "Age Rating" %>
+  <%= f.text_field :age%><br>
+  <%= f.label :year_released, "Release Year" %> 
+  <%= f.number_field :year_released%><br>
+  <%= f.submit "Submit Video" %>
+<% end %>
