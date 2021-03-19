@@ -1,9 +1,9 @@
 module RatingsHelper
     def new_or_update?
-        if params[:game_id] != nil
+        if params[:video_id] != nil
             return params[:video_id]
-        elsif @rating.game_id != nil
-            return @rating.game_id
+        elsif @rating.video_id != nil
+            return @rating.video_id
         end
     end
 

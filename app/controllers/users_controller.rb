@@ -22,7 +22,7 @@ class UsersController < ApplicationController
     end
 
     def show
-        @reviews = User.find_by(id: params[:id]).reviews
+        @ratings = User.find_by(id: params[:id]).ratings
     end
 
     def homepage

@@ -2,7 +2,7 @@ class RatingsController < ApplicationController
     before_action :require_login
     before_action :find_rating
     before_action :owner?, only: [:edit, :destroy]
-    before_action :existing_game, only: [:create]
+    before_action :existing_video, only: [:create]
   
       def index
           @ratings = Rating.latest

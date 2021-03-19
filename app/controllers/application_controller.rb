@@ -34,7 +34,7 @@ class ApplicationController < ActionController::Base
 
     def existing_video
         if params[:rating][:video_id] == nil   
-            @rating.video = Video.find_by(title: params[:rating][:video_attributes][:title], developer: params[:rating][:video_attributes][:developer], year_released: params[:review][:video_attributes][:year_released])
+            @rating.video = Video.find_by(title: params[:rating][:video_attributes][:title], developer: params[:rating][:video_attributes][:developer], year_released: params[:rating][:video_attributes][:year_released])
         end
     end
       

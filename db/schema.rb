@@ -17,10 +17,10 @@ ActiveRecord::Schema.define(version: 20210318) do
     t.string "body"
     t.integer "rating"
     t.bigint "user_id"
-    t.bigint "game_id"
+    t.bigint "video_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["game_id"], name: "index_ratings_on_game_id"
+    t.index ["video_id"], name: "index_ratings_on_video_id"
     t.index ["user_id"], name: "index_ratings_on_user_id"
   end
 

@@ -15,7 +15,7 @@ class VideosController < ApplicationController
         end
       
         def create
-          @videos = Video.create(game_params)
+          @videos = Video.create(video_params)
           if @videos.save
           redirect_to video_path(@videos), info: "Video was Created!"
           else
