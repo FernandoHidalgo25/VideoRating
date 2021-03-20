@@ -2,6 +2,7 @@ class VideosController < ApplicationController
     before_action :require_login
     before_action :find_video
     before_action :admin?, only: [:new, :edit]
+    include VideosHelper
   
       def index
           @videos = Video.alphabetized

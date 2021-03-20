@@ -1,15 +1,17 @@
-<h1 align=center> <bold> <%=@videos.title %> </h1> </bold>
+<h1 align=center> <bold> <%=@video.title %> </h1> </bold>
 <h1 align=center> <%= info %> </h1>
-<p align=center> This is a <%=@videos.genre %> </p>
-<p align=center> Developed by <%=@videos.developer %> </p>
-<p align=center> It is rated <%=@videos.age %> </p>
-<p align=center> The video was released in <%=@videos.year_released %> </p>
+<p align=center> This is a <%=@video.genre %> </p>
+<p align=center> Produced by <%=@video.developer %> </p>
+<p align=center> It is rated <%=@video.age %> </p>
+<p align=center> The video was released in <%=@video.year_released %> </p>
 
-<p align=center> Write a new rating <%= link_to 'Here!', new_video_rating_url(@videos.id) %> </br>
+<p align=center> Write a new rating <%= link_to 'Here!', new_video_rating_url(@video.id) %> </br>
 <%=admin_perms_edit_video%> 
 
-<% @videos.ratings.each do |rating| %>
- <p  align=center>   <%= link_to rating.title, video_rating_path(@videos, rating)%>
+<% @video.ratings.each do |rating| %>
+ <p  align=center>   <%= link_to rating.title, video_rating_path(@video, rating)%>
     <%=" (#{rating.rating}/100) written by " %>
     <%=link_to "#{rating.user.name}", user_path(rating.user_id)%> </br>
+    <p align="center"><%= image_tag("logo/movies.png", width: '400px')%></p>
+
 <%end%>

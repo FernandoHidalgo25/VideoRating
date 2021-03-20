@@ -1,19 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
+  <style>
+  body{
+    background-color:#00FFFF;
+  }
+  </style>
     <title>Videorating</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    
   </head>
 
   <body>
+<align=left><%= image_tag("logo/logo.png", width: '100px')%>
  <h3 align=right><%= link_to 'Videos', videos_path %> &emsp;
 <%= link_to 'Ratings', ratings_path %> &emsp;
 <%= link_to current_user.name, user_path(current_user)%>
 <%= button_to "Log Out", logout_path, method: :post%><h3>
 <hr>
     <%= yield %>
+
   </body>
 </html>

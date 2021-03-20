@@ -6,3 +6,5 @@
 <% @videos.each do |video| %>
 <%= link_to "#{video.title} (#{video.year_released})", video_path(video)%> </br>
 <% end %>
+
+<p align="center"><%= image_tag("logo/movies.png", width: '400px')%></p>

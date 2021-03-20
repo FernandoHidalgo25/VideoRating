@@ -17,7 +17,7 @@ class ApplicationController < ActionController::Base
     end
 
     def find_video
-        @videos = Video.find_by(id: params[:id])
+        @video = Video.find_by(id: params[:id])
     end
 
     def find_rating

@@ -64,3 +64,5 @@ gem 'omniauth-facebook'
 gem 'omniauth-rails_csrf_protection', '~> 0.1'
 
 gem 'dotenv-rails'
+
+gem 'thin', '~> 1.7'

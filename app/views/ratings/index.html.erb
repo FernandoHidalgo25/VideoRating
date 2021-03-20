@@ -9,3 +9,5 @@
 <b><%= link_to "#{rating.title} (#{rating.rating}/100)", rating_path(rating)%> </b>
 Rated by <%=link_to "#{rating.user.name}", user_path(rating.user_id)%> </br>
 <%end%> </p>
+
+<p align="center"><%= image_tag("logo/starsss.png", width: '200px')%></p>
