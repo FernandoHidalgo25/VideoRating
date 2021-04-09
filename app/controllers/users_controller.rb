@@ -11,6 +11,18 @@ class UsersController < ApplicationController
         @user = User.new
     end
 
+    def rating
+        @ratings = Rating
+    end
+
+    def video
+        @video_id = video_id
+    end 
+
+    def index
+        @users = Rating(params[video_id]).users
+    end   
+
     def create
         @user = User.create(user_params)
         if @user.save
@@ -38,3 +50,4 @@ class UsersController < ApplicationController
         )
     end
 end
+

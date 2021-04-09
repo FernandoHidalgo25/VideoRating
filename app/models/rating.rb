@@ -2,7 +2,7 @@ class Rating < ApplicationRecord
     belongs_to :video
     belongs_to :user
     accepts_nested_attributes_for :video
-    accepts_nested_attributes_for :user
+    #accepts_nested_attributes_for :user
 
     validates :title, presence: true, length: { maximum: 25 }
     validates :body, presence: true

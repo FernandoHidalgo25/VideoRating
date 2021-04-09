@@ -8,6 +8,7 @@
   <%= f.label :body %> 
   <%= f.text_field :body%><br>
   <%= f.label :rating %> 
+  <%= "Please rate from 1 to 100 and 100 is the highest"%> 
   <%= f.number_field :rating%><br>
   <%= hidden_field_tag "rating[video_id]", new_or_update?%>
   <% if new_video?%>

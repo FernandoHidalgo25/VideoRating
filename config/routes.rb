@@ -4,15 +4,18 @@ Rails.application.routes.draw do
     resources :ratings
   end
   resources :users do
-    resources :ratings
+    resources :ratings, only: [:show]
   end
+  resources :videos do
+    resources :users
+  end 
 
   root 'users#homepage'
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'
-  delete '/logout' => 'session#destory'
+  delete '/logout' => 'session#destroy'
   get '/secret' => 'secrets#show'
 
   get '/signup' => 'user#new'
