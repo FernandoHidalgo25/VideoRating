@@ -8,6 +8,9 @@
 <p align=center> Write a new rating <%= link_to 'Here!', new_video_rating_url(@video.id) %> </br>
 <%=admin_perms_edit_video%> 
 
+<p align=center> Check other people review <%= link_to 'Here!', video_users_path(@video.id)  %> </br>
+<%=admin_perms_edit_video%> 
+
 <% @video.ratings.each do |rating| %>
  <p  align=center>   <%= link_to rating.title, video_rating_path(@video, rating)%>
     <%=" (#{rating.rating}/100) written by " %>

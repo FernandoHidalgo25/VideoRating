@@ -2,9 +2,15 @@ class UsersController < ApplicationController
     layout false, :except => :show
     before_action :require_login, only: [:show]
     before_action :find_user
-
+    
     def index
-        @users = User.all
+        if params[:video_id]
+            video = Video.find(params[:video_id])
+            @users = return_me_users
+            #@users = Rating.(params[:video_id]).user
+        else
+            @users = User.all
+        end
     end
 
     def new
@@ -17,10 +23,6 @@ class UsersController < ApplicationController
 
     def video
         @video_id = video_id
-    end 
-
-    def index
-        @users = Rating(params[video_id]).users
     end   
 
     def create
@@ -49,5 +51,14 @@ class UsersController < ApplicationController
             :password
         )
     end
+    def return_me_users
+          video = Video.find(params[:video_id])
+            @ratings = video.ratings 
+            @us = []
+                @ratings.each do |r| 
+                    @us << User.find(r.user_id)
+                end 
+                @us 
+            end 
 end
 

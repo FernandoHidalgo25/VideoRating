@@ -5,6 +5,11 @@ class VideosController < ApplicationController
     include VideosHelper
   
       def index
+        if params[:user_id]
+          @videos = User.find(params[:user_id]).posts
+        else
+          @videos = Video.all
+        end
           @videos = Video.alphabetized
         end
       
