@@ -1,0 +1,13 @@
+<h1 align="center"> <%= info %> </h1>
+
+<p align="center">  If you want to make a new rating <%= link_to 'Click Here!', new_rating_path %></p>
+
+<p align="center"> Here the top ratings! </p>
+
+<p align="center"><% @ratings.each do |rating| %>
+ <%= "#{rating.video.title}:" %> 
+<b><%= link_to "#{rating.title} (#{rating.rating}/100)", rating_path(rating)%> </b>
+Rated by <%=link_to "#{rating.user.name}", user_path(rating.user_id)%> </br>
+<%end%> </p>
+
+<p align="center"><%= image_tag("logo/starsss.png", width: '200px')%></p>

@@ -5,11 +5,16 @@ class RatingsController < ApplicationController
     before_action :existing_video, only: [:create]
   
       def index
-          @ratings = Rating.latest
+          @ratings = Rating.all
         end
       
         def show
         end
+
+        def top_rating
+          @ratings = Rating.higher
+          @top_rating = Rating.where("rating > 89")
+        end 
       
         def new
           @rating = Rating.new

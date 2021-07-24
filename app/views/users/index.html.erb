@@ -16,6 +16,7 @@
 <align=left><%= image_tag("logo/logo.png", width: '100px')%>
  <h3 align=right><%= link_to 'Videos', videos_path %> &emsp;
 <%= link_to 'Ratings', ratings_path %> &emsp;
+<%= link_to 'Top Ratings', top_rating_path %> &emsp;
 <%= link_to current_user.name, user_path(current_user)%>
 <%= button_to "Log Out", logout_path, method: :post%><h3>
 <hr>

@@ -26,6 +26,8 @@ Rails.application.routes.draw do
 
   get '/auth/facebook/callback' => 'sessions#acreate'
 
+  get 'top_rating' => 'ratings#top_rating'
+
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
